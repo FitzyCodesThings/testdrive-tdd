@@ -28,7 +28,12 @@ namespace TestDriveTDD.Application.Services
 
         public async Task<Dealer> GetDealerByIdAsync(Guid id)
         {
-            throw new NotImplementedException();
+            var dealer = await this.appDbContext.SelectDealerByIdAsync(id);
+
+            if (dealer == null)
+                throw new Exception("Dealer not found.");
+
+            return dealer;
         }
 
         public async Task<List<Dealer>> GetDealersAsync()

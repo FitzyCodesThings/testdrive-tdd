@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDriveTDD.MVC", "TestDriveTDD.MVC\TestDriveTDD.MVC.csproj", "{52FAC532-EF0E-48CE-82DE-31BBF56F3C48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestDriveTDD.MVC", "TestDriveTDD.MVC\TestDriveTDD.MVC.csproj", "{52FAC532-EF0E-48CE-82DE-31BBF56F3C48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDriveTDD.Core", "TestDriveTDD.Core\TestDriveTDD.Core.csproj", "{138E833E-F5D2-4E7A-95FD-8002FC0DDFEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestDriveTDD.Core", "TestDriveTDD.Core\TestDriveTDD.Core.csproj", "{138E833E-F5D2-4E7A-95FD-8002FC0DDFEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDriveTDD.Application", "TestDriveTDD.Application\TestDriveTDD.Application.csproj", "{EE58C34D-A1E0-45DE-8404-778A4CF2144C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestDriveTDD.Application", "TestDriveTDD.Application\TestDriveTDD.Application.csproj", "{EE58C34D-A1E0-45DE-8404-778A4CF2144C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDriveTDD.Persistence", "TestDriveTDD.Persistence\TestDriveTDD.Persistence.csproj", "{6E0D4714-65EC-4792-AEEE-CDA90BDDDB0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestDriveTDD.Persistence", "TestDriveTDD.Persistence\TestDriveTDD.Persistence.csproj", "{6E0D4714-65EC-4792-AEEE-CDA90BDDDB0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDriveTDD.Tests", "TestDriveTDD.Tests\TestDriveTDD.Tests.csproj", "{51EEF0DA-4A37-403E-B2B6-A82B42F9B611}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{6E0D4714-65EC-4792-AEEE-CDA90BDDDB0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E0D4714-65EC-4792-AEEE-CDA90BDDDB0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E0D4714-65EC-4792-AEEE-CDA90BDDDB0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51EEF0DA-4A37-403E-B2B6-A82B42F9B611}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51EEF0DA-4A37-403E-B2B6-A82B42F9B611}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51EEF0DA-4A37-403E-B2B6-A82B42F9B611}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51EEF0DA-4A37-403E-B2B6-A82B42F9B611}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
