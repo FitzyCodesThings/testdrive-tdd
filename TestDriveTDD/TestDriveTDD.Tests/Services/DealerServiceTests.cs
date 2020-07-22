@@ -62,6 +62,8 @@ namespace TestDriveTDD.Tests
             actualDealer.Should().BeEquivalentTo(expectedDealer);
 
             appDbContextMock.Verify(db => db.SelectDealerByIdAsync(validId), Times.Once, "Db context was hit more than once.");
+
+            appDbContextMock.VerifyNoOtherCalls();
         }
 
         [Fact]
@@ -95,6 +97,8 @@ namespace TestDriveTDD.Tests
             await Assert.ThrowsAnyAsync<Exception>(() => actualDealerTask);
 
             appDbContextMock.Verify(db => db.SelectDealerByIdAsync(invalidId), Times.Once, "Db context was hit more than once.");
+
+            appDbContextMock.VerifyNoOtherCalls();
         }
     }
 }
