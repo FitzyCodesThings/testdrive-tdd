@@ -38,7 +38,7 @@ namespace TestDriveTDD.Application.Services
 
         public async Task<List<Dealer>> GetDealersAsync()
         {
-            throw new NotImplementedException();
+            return await this.appDbContext.SelectDealersAsync();
         }
 
         public async Task<Dealer> UpdateDealerAsync(Dealer dealer)

@@ -1,6 +1,7 @@
 using FluentAssertions;
 using Moq;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using TestDriveTDD.Application.Services;
 using TestDriveTDD.Core.Entities;
@@ -100,5 +101,70 @@ namespace TestDriveTDD.Tests
 
             appDbContextMock.VerifyNoOtherCalls();
         }
+    
+        [Fact]
+        public async Task GetDealersShouldReturnFullDealerList()
+        {
+            // given
+            Guid validId1 = Guid.NewGuid();
+            Guid validId2 = Guid.NewGuid();
+
+            DateTime date = DateTime.UtcNow;
+
+            List<Dealer> databaseDealers = new List<Dealer>() {
+                new Dealer()
+                {
+                    ID = validId1,
+                    Name = "Bob's Ford Dealer",
+                    MakeCarried = VehicleMake.Ford,
+                    DateCreated = date,
+                    DateUpdated = date
+                },
+                new Dealer()
+                {
+                    ID = validId2,
+                    Name = "Alan's GMC Dealer",
+                    MakeCarried = VehicleMake.GMC,
+                    DateCreated = date,
+                    DateUpdated = date
+                }
+            };
+
+            List<Dealer> expectedDealers = new List<Dealer>() {
+                new Dealer()
+                {
+                    ID = validId1,
+                    Name = "Bob's Ford Dealer",
+                    MakeCarried = VehicleMake.Ford,
+                    DateCreated = date,
+                    DateUpdated = date
+                },
+                new Dealer()
+                {
+                    ID = validId2,
+                    Name = "Alan's GMC Dealer",
+                    MakeCarried = VehicleMake.GMC,
+                    DateCreated = date,
+                    DateUpdated = date
+                }
+            };
+
+
+
+            this.appDbContextMock.Setup(db =>
+                db.SelectDealersAsync())
+                    .ReturnsAsync(databaseDealers);
+
+            // when
+            List<Dealer> actualDealers = await dealerService.GetDealersAsync();
+
+            // then
+            actualDealers.Should().BeEquivalentTo(expectedDealers);
+
+            appDbContextMock.Verify(db => db.SelectDealersAsync(), Times.Once, "Db context was hit more than once.");
+
+            appDbContextMock.VerifyNoOtherCalls();
+        }
+    
     }
 }
